@@ -1,0 +1,13 @@
+export enum Colors {
+  BLACK = '#000',
+  WHITE = '#FFF',
+  GRAY100 = '#F2F2F2',
+  GRAY200 = '#D9D9D9',
+  GRAY300 = '#808080',
+  GRAY400 = '#333',
+  GRAY500 = '#262626',
+  GRAY600 = '#1A1A1A',
+  GRAY700 = '#0D0D0D',
+  PURPLEDARK = '#5E60CE',
+  BLUEDARK = '#1E6F9F'
+}
