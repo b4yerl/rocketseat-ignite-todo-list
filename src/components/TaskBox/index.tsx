@@ -1,11 +1,44 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Colors } from "../../constants/Colors";
+import { useAppContext } from "../../../AppContext";
 
 export default function TaskBox(): JSX.Element {
-  return(
-    <ScrollView style={styles.container}>
+  const { taskList } = useAppContext();
 
-    </ScrollView>
+  return(
+    <View style={styles.container}>
+      <View>
+        <View>
+          <View>
+            <Text>Criadas</Text>
+          </View>
+          <View>
+            <Text>Concluídas</Text>
+          </View>
+        </View>
+        <View style={{ backgroundColor: Colors.GRAY300, width: '100%', height: 1, opacity: 0.3 }} />
+      </View>
+      <ScrollView>
+        { 
+          (taskList.length == 0) && 
+          <View>
+            <Image
+              source={require('../../../assets/Logo.png')}
+            />
+            <View>
+              <Text>
+                Você ainda não tem tarefas cadastradas
+              </Text>
+              <Text>
+                Crie tarefas e organize seus itens a fazer
+              </Text>
+            </View>
+          </View>
+          
+        }
+      </ScrollView>
+    </View>
   )
 }
 

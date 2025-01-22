@@ -4,7 +4,7 @@ import { Image, StyleSheet, TextInput, TouchableOpacity, View } from "react-nati
 import { useNewTask } from "./useNewTask";
 
 export default function NewTask(props: any): JSX.Element {
-  const { isFocused, setIsFocused } = useNewTask();
+  const { isFocused, setIsFocused, textInput, setTextInput, submitData } = useNewTask();
 
   return(
     <View style={ styles.inputContainer }>
@@ -14,8 +14,12 @@ export default function NewTask(props: any): JSX.Element {
           placeholderTextColor={Colors.GRAY300}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          onChangeText={setTextInput}
+          value={textInput}
         />
-        <TouchableOpacity style={ styles.button }>
+        <TouchableOpacity style={ styles.button }
+          onPress={submitData}
+        >
           <Image 
             source={require("../../../assets/Plus.png")}
           />

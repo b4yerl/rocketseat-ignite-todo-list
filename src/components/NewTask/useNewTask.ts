@@ -7,24 +7,21 @@ export function useNewTask() {
 
   const { taskList, addTask } = useAppContext()
 
-  const handleChanges = (text: string): void => {
-    setTextInput(text);
-  }
-
-  const submitData = ():void {
+  const submitData = ():void => {
     if(textInput.trim() === "") {
       return;
     }
 
-    if( taskList.find(i => i.description == textInput) ) {
-      return;
-    }
-
+    if(taskList.find(i => i.description == textInput)) return;
+    
     addTask(textInput);
   }
 
   return {
     isFocused,
-    setIsFocused
+    setIsFocused,
+    textInput,
+    setTextInput,
+    submitData
   }
 }
