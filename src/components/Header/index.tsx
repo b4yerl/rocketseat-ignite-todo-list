@@ -7,9 +7,8 @@ import NewTask from "../NewTask";
 export default function Header(): JSX.Element {
   return (
     <View style={styles.container}>
-      <Image 
+      <Image
         source={require("../../../assets/Logo.png")}
-        style={ styles.image }
       />
       <NewTask />
     </View>
@@ -25,7 +24,4 @@ const styles = StyleSheet.create({
     gap: 4,
     zIndex: 2
   },
-  image: {
-    height: 32
-  }
 })

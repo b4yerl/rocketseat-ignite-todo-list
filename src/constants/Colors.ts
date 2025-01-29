@@ -9,5 +9,7 @@ export enum Colors {
   GRAY600 = '#1A1A1A',
   GRAY700 = '#0D0D0D',
   PURPLEDARK = '#5E60CE',
-  BLUEDARK = '#1E6F9F'
+  PURPLE = '#8284FA',
+  BLUEDARK = '#1E6F9F',
+  BLUE = '#4EA8DE',
 }
